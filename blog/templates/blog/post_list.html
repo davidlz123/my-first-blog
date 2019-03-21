@@ -3,10 +3,17 @@
 		<title>proyecto</title>
 </head>	
 <body>
-	<h1><a href="/"> Blog</h1>
 
-	<p>published:21.03.2019, 12:09</p>
-	<h2><a href="">Mi primer post</a>
+	<div>
+	<h1><a href="/"> Blog</a></h1>
+	</div>
+	{% for post in posts %} 
+	<div>
+	<p>published: {{ post.published_date }}</p>
+	<h1><a href="">{{ post.title }}</a></h1>
+	<p>{{ post.text|linebreaksbr }}</p>
+</div>
+{% endfor %}
 
 </body>
 </html>	
